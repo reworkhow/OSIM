@@ -9,3 +9,8 @@ OSIM1.1
 
 OSIM2.0
 - new method to sample and save mutations.
+
+7/10/2014
+OSIM1.2
+- add pedsample, simulation with pedigree
+- - add ped.h to solve the problem with including files with each other.
