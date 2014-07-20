@@ -13,4 +13,11 @@ OSIM2.0
 7/10/2014
 OSIM1.2
 - add pedsample, simulation with pedigree
-- - add ped.h to solve the problem with including files with each other.
+- add ped.h to solve the problem with including files with each other.
+
+7/20/2014
+OSIM1.3
+- add functions in SimPop class to make crossing between two populations possible.
+- make the structure more clear.
+
+
