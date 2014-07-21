@@ -62,10 +62,13 @@ void SimPop::popFounders(unsigned size, string file, unsigned founder_size){
 
 void SimPop::popSample(unsigned size, int nGen){
     
+    if(founders.size()!= 0){
         nGen--;
         parents.sampleChildren(size,founders,founders);
         myGen = 2;
         nGen--;
+        founders.clear();
+    }
     
     for (int i=1; i<=nGen; i++){
         cout << "Generation " << myGen << " ";
@@ -103,12 +106,11 @@ void SimPop::pedSample(string pedfile){
 }
 
 
-void SimPop::merge(SimPop, unsigned size){
-    
-    children.sampleChildren(size,parents,SimPop::parents);
+void SimPop::cross(SimPop &a,SimPop &b,unsigned size){
+    children.sampleChildren(size,a.parents,b.parents);
     parents.copy(children);
-
 }
+
 
 MatrixXf SimPop::getGenotypes(){
     parents.getHaps();

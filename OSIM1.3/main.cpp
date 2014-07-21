@@ -34,27 +34,23 @@ int main(int argc, const char * argv[])
     double   mutRate =  1e-5;
 
     
-    SimPop osim(nChrm,nLoci,chrLength,mutRate);
+    SimPop osim1(nChrm,nLoci,chrLength,mutRate);
     SimPop osim2(nChrm,nLoci,chrLength,mutRate);
-    osim.popFounders(popSize,"",0);
+    osim1.popFounders(popSize,"",0);
     osim2.popFounders(popSize,"",0);
 
 
-    osim.popSample(popSize,nGen);
+    osim1.popSample(popSize,nGen);
     osim2.popSample(popSize,nGen);
     
-    osim.merge(osim2,popSize);
-   
-    osim.popSample(popSize/2,nGen);
     
-    cout<<AnimalClass::founders.size()<<endl;
-    cout<<AnimalClass::mutants.size()<<endl;
-    cout<<AnimalClass::countChromosome<<endl;
-
+    SimPop osim3(nChrm,nLoci,chrLength,mutRate);
+    osim3.cross(osim1,osim2,popSize);
+    osim3.popSample(popSize/2,nGen);
 
     
     MatrixXf out;
-    out=osim.getGenotypes();
+    out=osim3.getGenotypes();
     
     ofstream outFile("/Users/erxingfangshui/Documents/genotype_"+currentDateTime());
     outFile <<out;

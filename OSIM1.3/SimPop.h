@@ -38,9 +38,9 @@ public:
     void pedSample(string pedfile);
     //GET GENOTYPES
     MatrixXf getGenotypes();
-    
-    //merge with other populations
-    void merge(SimPop, unsigned size);
+        
+    //crossing from other two lines
+    void cross(SimPop &a,SimPop &b,unsigned size);
 
 };
 
