@@ -1,0 +1,14 @@
+#############################################################################
+# Makefile for building: OSim
+
+myPath = /Users/erxingfangshui/Dropbox/CODE
+INCPATH = -I $(myPath)/eigen3 -I $(myPath)/boost
+
+GenSim:	main.o libGenSim.a
+	g++ -o GenSim main.o libGenSim.a 
+
+main.o: main.cpp 
+	g++ $(INCPATH) -c -o main.o main.cpp
+
+clean:
+	\rm main.o GenSim
