@@ -1,0 +1,5 @@
+seed 5
+nChrm 3
+chrLength 1.0 1.1 0.9
+nLoci 5 4 2
+mutRate 0.00000001
