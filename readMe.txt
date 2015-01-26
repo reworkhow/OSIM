@@ -20,6 +20,13 @@ OSIM1.3
 - add functions in SimPop class to make crossing between two populations possible.
 - make the structure more clear.
 
-12/1/2013
+12/1/2014
 GenSim1.3
 - add functions to use files to read in genome info for several chromosomes.
+GenSim1.13
+- optimize code to follow DRY priciples
+- add genoinfo file and haplotypes files.
+
+1/26/2015
+GenSim1.4
+- add phenotype simulation functions
